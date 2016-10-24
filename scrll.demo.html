@@ -1,0 +1,425 @@
+﻿<html lang="en"><head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.rawgit.com/jquerycods/dm001/master/dm.css" media="all" rel="stylesheet" type="text/css">
+<link href="https://cdn.rawgit.com/jquerycods/dm001/master/dm2.css" media="all" rel="stylesheet" type="text/css">
+<style>
+.content-main {padding: 16px 0 0;}
+.header-logo-account__logo h1{font-weight: 900;font-size: 20px;color: #f1f1f0;line-height: 25px;padding: 12px 0px 10px 0px;}
+.blogger-scrolltop {
+    display: block;
+    position: fixed;
+    width: 0;
+    height: 0;
+    bottom: 23px;
+    right: 23px;
+    padding: 0;
+    overflow: hidden;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    cursor: hand;
+    border-radius: 50%;
+    background:#FFC107;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
+    -ms-transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
+    -moz-transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
+    -o-transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
+    transition: all 0.3s cubic-bezier(0.25, 0.25, 0, 1);
+}
+
+.blogger-scrolltop:hover {
+    background-color:#FFC107;
+    text-decoration: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5), 0 3px 15px rgba(0, 0, 0, 0.5);
+}
+
+.blogger-scrolltop::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 0;
+    border-radius: 100%;
+    background:#FF9800;
+}
+
+.blogger-scrolltop:active::before {
+    width: 120%;
+    padding-top: 120%;
+    -webkit-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+.blogger-scrolltop.reveal {
+    width: 56px;
+    height: 56px;
+	cursor:pointer;
+}
+
+.blogger-scrolltop span {
+    display: block;
+    font-size: 25px;
+    color: #fff;
+}
+
+.blogger-scrolltop,
+.blogger-scrolltop::before {
+    background-image: url(https://cdn.rawgit.com/jquerycods/swp/master/top-arrow.svg);
+    background-position: center 50%;
+    background-repeat: no-repeat;
+}
+.blogger-scrolltop:hover {
+		background-color:#ff5722;
+	}
+	.blogger-scrolltop {
+		background:#f44336;
+	}
+	
+	.kalanOkumaSure {
+		background:#f44336;
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+		color: #ffffff;
+	}
+	.blogger-scrolltop {
+	  bottom: 100px;
+	  right: 100px;
+	}
+	.{
+		display: none !important;
+	}
+.kalanOkumaSure {
+	position: fixed;
+	font-weight: bold;
+	font-size: 13px;
+	border-radius: 3px;
+	left: 40px;
+	bottom: 40px;
+	width: 95px;
+	height: 38px;
+	line-height: 38px;
+	text-align: center;
+	font-family: "Open Sans", sans-serif;
+	font-size: 14px;
+	font-weight: normal;
+	background: rgba(0, 0, 0, 0.4);
+	color: white;
+	z-index: 9999;
+
+	opacity: 1;
+	-webkit-transition: opacity 0.45s ease;
+	-moz-transition:    opacity 0.45s ease;
+	-o-transition:      opacity 0.45s ease;
+	transition:         opacity 0.45s ease;
+
+}
+.kalanOkumaSure.hidden {
+	opacity: 0;
+	-moz-transition-property: none;
+	-webkit-transition-property: none;
+	-o-transition-property: none;
+	transition-property: none;
+}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="page__canvas">
+<div class="canvas">
+<div class="canvas__header">
+<header class="site-header">
+<div class="site-header__logo-and-account is-hidden-tablet-and-below">
+<div class="header-logo-account">
+<div class="grid-container">
+<div class="header-logo-account__container">
+<span class="header-logo-account__logo">
+<h1>Blogger Eklentileri</h1>
+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="site-header__categories is-hidden-tablet-and-below">
+<div class="header-categories">
+<div class="grid-container">
+<ul class="header-categories__links">
+<li class="header-categories__links-item">
+<a href="http://bloggereklentileri.blogspot.com/" class="header-categories__main-link" data-dropdown-target=".js-categories-all-files-dropdown" data-view="touchOnlyDropdown">Web Araçları</a>
+<div class="header-categories__links-dropdown js-categories-all-files-dropdown">
+<ul class="hub-header-dropdown">
+<li>
+<a href="http://bloggereklentileri.blogspot.com.tr/p/function-convertvar-ele1-document.html">HTML Dönüştürücü</a>
+</li>
+<li>
+<a href="http://bloggereklentileri.blogspot.com.tr/p/blogger.html">Blogger Renk Kodları</a>
+</li>
+<li>
+<a href="http://bloggereklentileri.blogspot.com.tr/p/blog-page_19.html">Blogger CSS Sıkıştırma</a>
+</li>
+<li>
+<a href="http://bloggereklentileri.blogspot.com.tr/p/kamus-html-tag-keterangan.html">Blogger HTML Sözlük</a>
+</li>
+<li>
+<a href="http://bloggereklentileri.blogspot.com.tr/p/font-awesome-icons-di-bawah-ini.html">Blogger Fontawesome</a>
+</li>
+<li>
+<a href="http://bloggereklentileri.blogspot.com.tr/p/blog-page.html">Blogger Emoji</a>
+</li>
+</ul>
+</div>
+</li>
+<li class="header-categories__links-item">
+<a href="http://bloggereklentileri.blogspot.com.tr/search/label/Blogger%20Temalar" class="header-categories__main-link" data-dropdown-target=".js-categories-0-dropdown" data-view="touchOnlyDropdown">Temalar</a>
+</li>
+<li class="header-categories__links-item">
+<a href="http://bloggereklentileri.blogspot.com.tr/search/label/HTML" class="header-categories__main-link" data-dropdown-target=".js-categories-1-dropdown" data-view="touchOnlyDropdown">HTML</a>
+</li>
+<li class="header-categories__links-item">
+<a href="http://bloggereklentileri.blogspot.com.tr/search/label/Widget" class="header-categories__main-link" data-dropdown-target=".js-categories-2-dropdown" data-view="touchOnlyDropdown">Widget'lar</a>
+</li>
+<li class="header-categories__links-item">
+<a href="http://bloggereklentileri.blogspot.com.tr/search/label/CSS" class="header-categories__main-link" data-dropdown-target=".js-categories-3-dropdown" data-view="touchOnlyDropdown">CSS</a>
+</li>
+<li class="header-categories__links-item">
+<a href="http://bloggereklentileri.blogspot.com.tr/search/label/SEO" class="header-categories__main-link" data-dropdown-target=".js-categories-4-dropdown" data-view="touchOnlyDropdown">SEO</a>
+</li>
+<li class="header-categories__links-item">
+<a href="http://bloggereklentileri.blogspot.com.tr/search/label/Javascript" class="header-categories__main-link" data-dropdown-target=".js-categories-5-dropdown" data-view="touchOnlyDropdown">JavaScript</a>
+</li>
+<li class="header-categories__links-item">
+<a href="http://bloggereklentileri.blogspot.com.tr/p/google-drive-indime-download-linki.html" class="header-categories__main-link" data-dropdown-target=".js-categories-6-dropdown" data-view="touchOnlyDropdown">Google Drive İndirme Linki Oluşturma</a>
+</li>
+<li class="header-categories__links-separator"></li>
+<li class="header-categories__links-item">
+<a href="#" class="header-categories__main-link header-categories__main-link--new_label" data-dropdown-target=".js-categories-course-dropdown" data-view="touchOnlyDropdown">
+Dersler
+&nbsp;<span class="e-text-label -size-s -color-grey-light">YENİ</span>
+</a><div class="header-categories__links-dropdown js-categories-course-dropdown">
+<ul class="hub-header-dropdown">
+<li>
+<a href="http://bloggereklentileri.blogspot.com.tr/2016/10/google-amp-blogger-sablon-ve-temalar.html" class="hub-header-dropdown__top">Popüler Ürünleri</a>
+</li>
+<li class="hub-header-dropdown__all-items">
+<a href="#">Blogger Araştırma</a>
+</li>
+<li>
+<a href="http://bloggereklentileri.blogspot.com.tr/search/label/Blogger%20%C4%B0pu%C3%A7lar%C4%B1">Blogger Kodeks</a>
+</li>
+<li>
+<a href="http://bloggereklentileri.blogspot.com.tr/">Blogger Web Tasarım</a>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+<div class="header-categories__search">
+<form accept-charset="UTF-8" action="http://bloggereklentileri.blogspot.com.tr/p/blogger-eklentileri-arama-motoru.html" data-view="searchField" id="search" method="get">
+<input name="cx" type="hidden" value="partner-pub-001431127304379500460:0gsxr2wr-wg">
+<input name="cof" type="hidden" value="FORID:10">
+<input name="ie" type="hidden" value="ISO-8859-2">
+<div style="margin:0;padding:0;display:inline">
+<input name="utf8" type="hidden" value="✓"></div>
+<div class="search-field -border-light">
+<div class="search-field__input">
+<input class="js-term search-field__input-field" id="term" name="term" placeholder="Ara" type="search">
+</div>
+<button class="search-field__button" type="submit">
+<i class="e-icon -icon-search"><span class="e-icon__alt">Search</span></i>
+</button>
+</div>
+</form></div>
+</div>
+</div>
+</div>
+</header>
+</div>
+<div class="js-canvas__body canvas__body">
+<div class="context-header ">
+<div class="grid-container">
+<div class="item-header" data-view="itemHeader">
+<div class="item-header__title">
+<h1 class="t-heading -color-inherit -size-l h-m0 is-hidden-phone" itemprop="name">Scroll To Top
+</h1>
+<h1 class="t-heading -color-inherit -size-xs h-m0 is-hidden-tablet-and-above">
+Popup Google Özel Arama Kutusu Oluşturma - DEMO
+</h1>
+</div>
+</div>
+</div>
+</div>
+<div class="content-main" id="content">
+<div class="grid-container">
+<div class="purchase-form__button">
+<a href="http://bloggereklentileri.blogspot.com" class="js-purchase__add-to-cart e-btn--3d -color-primary -size-m -width-full" data-view="modalAjax" rel="nofollow">SAYFAYA DÖN</a></div>
+<div class="box--no-padding">
+<div class="item-preview -preview-live">
+<div style="position:relative;height:100%;overflow:hidden;margin:0 auto;width:100%"><div style="position:relative;padding-bottom:56.25%;height:100%;overflow:hidden;margin:0 auto;width:100%;"><iframe allowfullscreen="" frameborder="0" height="400" src="https://drive.google.com/file/d/0B25x-zf4MlGwamxneVZneVptS0k/preview" style="border: 0px; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" width="100%" data-src="https://drive.google.com/file/d/0B25x-zf4MlGwamxneVZneVptS0k/preview"></iframe></div></div>
+</div>
+</div>
+<div class="box -radius-all">
+<div style="position:relative;height:100%;overflow:hidden;margin:0 auto;width:100%"><div style="position:relative;padding-bottom:56.25%;height:100%;overflow:hidden;margin:0 auto;width:100%"><iframe id="dsq-app1" name="dsq-app1" allowtransparency="true" frameborder="0" scrolling="no" tabindex="0" title="Disqus" width="100%" src="https://cdn.rawgit.com/jquerycods/google-amp/master/disqus.html?shortname=bloggerekibi" style="width: 100%; min-width: 100% !important; border: 0px; overflow: hidden !important; height: 100%; position: absolute; top: 0px; left: 0px;" horizontalscrolling="no" verticalscrolling="no" data-src="https://cdn.rawgit.com/jquerycods/google-amp/master/disqus.html?shortname=bloggerekibi"></iframe></div></div>
+</div>
+</div>
+<footer class="site-footer">
+<div class="site-footer__primary">
+<div class="footer-primary">
+<div class="grid-container">
+<div class="footer-top"></div>
+<div class="footer-bottom">
+<p class="t-body h-m0"><small>Copyright © 2015 Blogger Eklentileri Tüm hakları saklıdır.</small></p>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<button class="blogger-scrolltop" type="button">
+<span>↑</span> 
+</button>
+<script>
+(function( $ ) {
+	$( document ).ready(function() {
+		$('body').bloggerScrollTop();
+	});
+})( jQuery );
+//<![CDATA[
+(function($) {
+    function bScrollTop(element, settings) {
+
+        var _ = this,
+            breakpoint;
+        var scrollTo = 0;
+
+        _.btnClass = '.blogger-scrolltop';
+        _.revealClass = 'reveal';
+        _.btnElement = $(_.btnClass);
+
+        _.initial = {
+            revealElement: 'body',
+            revealPosition: 'top',
+            padding: 0,
+            duration: 600,
+            easing: 'swing',
+            onScrollEnd: false
+        }
+
+        _.options = $.extend({}, _.initial, settings);
+
+        _.revealElement = $(_.options.revealElement);
+        breakpoint = _.options.revealPosition !== 'bottom' ? _.revealElement.offset().top : _.revealElement.offset().top + _.revealElement.height();
+        scrollTo = element.offsetTop + _.options.padding;
+
+        $(document).scroll(function() {
+            if (breakpoint < $(document).scrollTop()) {
+                _.btnElement.addClass(_.revealClass);
+            } else {
+                _.btnElement.removeClass(_.revealClass);
+            }
+        });
+
+        _.btnElement.click(function() {
+            var trigger = true;
+            $('html, body').animate({
+                scrollTop: scrollTo
+            }, _.options.duration, _.options.easing, function() {
+                if (trigger) {
+                    trigger = false;
+                    var callback = _.options.onScrollEnd;
+                    if (typeof callback === "function") {
+                        callback();
+                    }
+                }
+            });
+            return false;
+        });
+    }
+
+    $.fn.bloggerScrollTop = function() {
+        var _ = this,
+            opt = arguments[0],
+            l = _.length,
+            i = 0;
+        if (typeof opt == 'object' || typeof opt == 'undefined') {
+            _[i].bloggerScrollTop = new bScrollTop(_[i], opt);
+        }
+        return _;
+    };
+}(jQuery));
+//]]>
+</script>
+<script src='https://cdn.rawgit.com/jquerycods/swp/master/nscroll.js'></script>
+<script src='https://cdn.rawgit.com/jquerycods/swp/master/okuma.js'/>
+<script>
+(function( $ ) {
+	$( document ).ready(function() {
+		$('body').kalanOkuma();
+	});
+})( jQuery );	
+</script>
+<script type="text/javascript">
+
+(function( $ ) {
+	
+	$(document).ready(function(){
+		$("html").niceScroll({
+			cursorcolor: "#f44336",
+			cursorwidth: "10px",
+			cursorborderradius: "0px",
+			cursorborder: "0px solid #fff",
+			scrollspeed: "50",
+						autohidemode: false,
+						touchbehavior: false,
+			bouncescroll: true,
+			horizrailenabled: false,
+		});           
+	});		
+	
+})( jQuery );
+</script>
+<script>
+//<![CDATA[
+$(document).ready(function() {
+    $('iframe[src*="drive.google.com"]').wrap('<div style="position: relative;padding-bottom:100;height: 0;overflow: hidden;margin: 0 auto;width: 100%;"></div>');
+    $('iframe[src*="drive.google.com"]').css({
+        "position": "absolute",
+        "top": "0",
+        "left": "0",
+        "width": "100%",
+        "height": "100%",
+        "border": "0"
+    });
+    $('iframe[src*="drive.google.com"]').each(function() {
+        $(this).attr("data-src", $(this).attr("src"));
+        $(this).attr("src", "")
+    });
+});
+
+function init() {
+    var vidDefer = document.getElementsByTagName('iframe');
+    for (var i = 0; i < vidDefer.length; i++) {
+        if (vidDefer[i].getAttribute('data-src')) {
+            vidDefer[i].setAttribute('src', vidDefer[i].getAttribute('data-src'));
+        }
+    }
+}
+window.onload = init;
+//]]>
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/jquerycods/dm001/master/dm1245.js"></script>
+</body></html>
